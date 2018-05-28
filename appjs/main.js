@@ -21,7 +21,7 @@
             controllerAs : 'mygroupsCtrl'
         }).when('/groups/:gid/messages', {
             templateUrl: 'pages/groupmessages.html',
-            controller: 'groupMessagesController',
+            controller: 'GroupMessagesController',
             controllerAs : 'groupMessagesCtrl'
         }).when('/chat', {
             templateUrl: 'pages/chat.html',

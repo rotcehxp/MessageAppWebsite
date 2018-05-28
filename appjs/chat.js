@@ -1,4 +1,4 @@
-angular.module('MessageApp').controller('ChatController', ['$http', '$log', '$scope',
+angular.module('MessageApp').controller('groupMessagesController', ['$http', '$log', '$scope',
     function($http, $log, $scope) {
         var thisCtrl = this;
 
