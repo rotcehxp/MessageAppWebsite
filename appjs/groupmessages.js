@@ -277,7 +277,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
             //$log.error("Message Loaded: ", JSON.stringify(thisCtrl.loginform));
 
             // Now create the url with the route to talk with the rest API
-            var reqURL = "http://localhost:5000/MessageApp/groups/"+thisCtrl.gid+"/messages)";
+            var reqURL = "http://localhost:5000/MessageApp/groups/"+thisCtrl.gid+"/messages";
             console.log("reqURL: " + reqURL);
 
             // configuration headers for HTTP request
@@ -294,7 +294,6 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                 function (response) {
                     console.log("data: " + JSON.stringify(response.data));
                     // tira un mensaje en un alert
-                    alert("Tu mensaje se ha registrado exitosamente.");
                     thisCtrl.messages();
                 }, //Error function
                 function (response) {
@@ -373,6 +372,86 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
             document.getElementById("writemessagebox").style.display = "none";
             document.getElementById("searchhashtagbox").style.display = "block";
         };
+
+        this.showWriteReplyBox = function(mid){
+            document.getElementById("enterreplymessagebox").style.display = "block";
+            localStorage.setItem("currentSelectedMessage", mid);
+        };
+
+         this.hideWriteReplyBox = function(){
+            document.getElementById("enterreplymessagebox").style.display = "none";
+        };
+
+        this.postReplyMessage = function(mid){
+
+            var loggedUser = localStorage.getItem("currentLoggedUser");
+            var content = document.getElementById("textarea3").value;
+
+            // Build the data object
+            var data = {};
+
+            data.content = content;
+
+            data.pid = parseInt(loggedUser);
+
+            console.log(data);
+
+            data = JSON.stringify(data);
+
+            console.log(data);
+
+            //$log.error("Message Loaded: ", JSON.stringify(thisCtrl.loginform));
+
+            // Now create the url with the route to talk with the rest API
+            var reqURL = "http://localhost:5000/MessageApp/groups/"+thisCtrl.gid+"/messages/"+localStorage.getItem("currentSelectedMessage");
+            console.log("reqURL: " + reqURL);
+
+            // configuration headers for HTTP request
+            var config = {
+                headers : {
+                  'Content-Type': 'application/json;charset=utf-8;'
+                  //'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+                }
+            }
+
+            // Now issue the http request to the rest API
+            $http.post(reqURL, data, config).then(
+                // Success function
+                function (response) {
+                    console.log("data: " + JSON.stringify(response.data));
+                    // tira un mensaje en un alert
+                    thisCtrl.messages();
+                }, //Error function
+                function (response) {
+                    // This is the error function
+                    // If we get here, some error occurred.
+                    // Verify which was the cause and show an alert.
+                    var status = response.status;
+                    console.log("Error: " + reqURL);
+                    //alert("Cristo");
+                    if (status == 0) {
+                        alert("No hay conexion a Internet");
+                    }else if (status == 400) {
+                        alert("Tienes algún error con tu información.");
+                    }
+                    else if (status == 401) {
+                        alert("Su sesion expiro. Conectese de nuevo.");
+                    }
+                    else if (status == 403) {
+                        alert("No esta autorizado a usar el sistema.");
+                    }
+                    else if (status == 404) {
+                        alert("No se encontro la informacion solicitada.");
+                    }
+                    else {
+                        alert("Error interno del sistema.");
+                    }
+                }
+            );
+
+
+        }
+
 
 
 

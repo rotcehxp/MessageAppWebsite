@@ -19,6 +19,7 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
 
             var url = "http://localhost:5000/MessageApp/users/"+loggedUser+"/mygroups";
 
+
             // Now set up the $http object
             // It has two function call backs, one for success and one for error
             $http.get(url).then(// success call back
@@ -84,7 +85,7 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
             // Build the data object
             var data = {};
             data.username = username;
-            data.gid = gid;
+            data.gid = parseInt(gid);
 
             data = JSON.stringify(data);
             console.log(data);
@@ -146,6 +147,14 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
         this.groupsMessages = function (gid) {
             $location.url('/groups/' + gid + '/messages');
         }*/
+
+        this.getAdminStatus = function(pid){
+            var loggedUser = localStorage.getItem("currentLoggedUser");
+            if(pid==loggedUser){
+                return "owner";
+            }
+            return "member";
+        };
 
         this.groups();
 

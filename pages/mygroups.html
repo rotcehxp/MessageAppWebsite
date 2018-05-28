@@ -28,8 +28,9 @@
 							<div class="cell" data-title="Group Id" ng-click="mygroupsCtrl.loadMessages(group.gid)" >
 								{{group.gid}}
 							</div>
-							<div class="cell" data-title="Admin Id" ng-click="mygroupsCtrl.loadMessages(group.gid)" >
-								{{group.pid}}
+							<div class="cell" data-title="Role" ng-click="mygroupsCtrl.loadMessages(group.gid)">
+								{{mygroupsCtrl.getAdminStatus(group.pid)}}
+
 							</div>
 							<div class="cell">
 								<style>
@@ -50,7 +51,7 @@
 
 					</div>
 			</div>
-			<div id="enterusernamebox" style="height:100%; width:100%; background:rgba(0, 0, 0, 0.5); z-index:9999; position:absolute; display:none; ">
+			<div id="enterusernamebox" style="height:100%; width:100%; background:rgba(0, 0, 0, 0.5); z-index:9999; position:fixed; display:none; ">
 			<div style="margin-top:10px;max-width:250px; margin: 200px auto;">
 				<div class="col s12 m6">
 					<div class="card teal darken-1">
