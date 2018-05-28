@@ -11,12 +11,24 @@
             templateUrl: 'pages/register.html',
             controller: 'RegisterController',
             controllerAs : 'registerCtrl'
+        }).when('/register', {
+            templateUrl: 'pages/register.html',
+            controller: 'RegisterController',
+            controllerAs : 'registerCtrl'
+        }).when('/users/:pid/mygroups', {
+            templateUrl: 'pages/mygroups.html',
+            controller: 'MyGroupsController',
+            controllerAs : 'mygroupsCtrl'
+        }).when('/groups/:gid/messages', {
+            templateUrl: 'pages/groupmessages.html',
+            controller: 'groupMessagesController',
+            controllerAs : 'groupMessagesCtrl'
         }).when('/chat', {
             templateUrl: 'pages/chat.html',
             controller: 'ChatController',
             controllerAs : 'chatCtrl'
         }).otherwise({
-            redirectTo: '/chat'
+            redirectTo: '/login'
         });
     }]);
 

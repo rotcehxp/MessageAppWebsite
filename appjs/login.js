@@ -39,7 +39,16 @@ angular.module('MessageApp').controller('LoginController', ['$http', '$log', '$s
                     console.log("data: " + JSON.stringify(response.data));
                     // tira un mensaje en un alert
                     //alert("Login attempt: " + response.data);
-                    $location.url('/chat');
+
+
+                    var user_pid = response.data.User.pid;
+
+                    localStorage.setItem("currentLoggedUser", user_pid);
+                    localStorage.setItem("currentLoggedUserId", user_pid);
+                    localStorage.setItem("currentLoggedUserUsername", response.data.User.username);
+
+                    console.log('/users/'+user_pid+'/mygroups');
+                    $location.url('/users/'+user_pid+'/mygroups');
                 }, //Error function
                 function (response) {
                     // This is the error function
@@ -72,5 +81,5 @@ angular.module('MessageApp').controller('LoginController', ['$http', '$log', '$s
         };
 
 
-        //this.loadMessages();
+
 }]);
