@@ -6,7 +6,6 @@ angular.module('MessageApp').controller('RegisterController', ['$http', '$log', 
 
         thisCtrl.register = function(){
 
-            console.log("HERE");
 
             var firstname = document.getElementById("registerfirstname").value;
             var lastname = document.getElementById("registerlastname").value;
