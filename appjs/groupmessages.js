@@ -452,10 +452,114 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
 
         }
 
+        this.hideListWhoLikes = function(){
+            document.getElementById("peopleWhoLike").style.display = "none";
+        }
+
+        this.hideListWhoDislikes = function(){
+            document.getElementById("peopleWhoDislike").style.display = "none";
+        }
+
+
+        this.loadWhoLikes = function(mid){
+
+
+            var url = "http://localhost:5000/MessageApp/messages/"+mid+"/likes";
+            console.log("http://localhost:5000/MessageApp/messages/"+mid+"/likes");
+
+            $http.get(url, {params: {"who":true}}).then(
+                function (response){
+
+                    console.log("response: " + JSON.stringify(response.data));
+                    console.log(response.data);
+
+                    thisCtrl.peopleWhoLike = response.data.Like_list;
+
+                    document.getElementById("peopleWhoLike").style.display = "block";
+
+                    document.getElementById("listwholike").innerHTML = "";
+
+
+                    console.log(thisCtrl.peopleWhoLike);
+                    for(var people in thisCtrl.peopleWhoLike){
+                        var z = document.createElement('p'); // is a node
+                        z.style = "margin-left:10px;"
+                        z.innerHTML = thisCtrl.peopleWhoLike[people].username;
+                        document.getElementById("listwholike").appendChild(z);
+                    }
+
+            },
+            function (response){
+
+                var status = response.status;
+                if (status == 0){
+                    alert("No hay conexion a Internet");
+                }
+                else if (status == 401){
+                    alert("Su sesion expiro. Conectese de nuevo.");
+                }
+                else if (status == 403){
+                    alert("No esta autorizado a usar el sistema.");
+                }
+                else if (status == 404){
+                    alert("No se encontro la informacion solicitada.");
+                }
+                else {
+                    alert("Error interno del sistema.");
+                }
+            });
+
+        };
+
+        this.loadWhoDislikes = function(mid){
 
 
 
+            var url = "http://localhost:5000/MessageApp/messages/"+mid+"/dislikes";
+            console.log("http://localhost:5000/MessageApp/messages/"+mid+"/dislikes");
 
+            $http.get(url, {params: {"who":true}}).then(
+                function (response){
+
+                    console.log("response: " + JSON.stringify(response.data));
+                    console.log(response.data);
+
+                    thisCtrl.peopleWhoLike = response.data.Dislike_list;
+
+                    document.getElementById("peopleWhoDislike").style.display = "block";
+
+                    console.log(thisCtrl.peopleWhoLike);
+
+                    document.getElementById("listwhodislike").innerHTML = "";
+                    for(var people in thisCtrl.peopleWhoLike){
+                        var z = document.createElement('p'); // is a node
+                        z.style = "margin-left:10px;"
+                        z.innerHTML = thisCtrl.peopleWhoLike[people].username;
+                        document.getElementById("listwhodislike").appendChild(z);
+                    }
+
+            },
+            function (response){
+
+                var status = response.status;
+                if (status == 0){
+                    alert("No hay conexion a Internet");
+                }
+                else if (status == 401){
+                    alert("Su sesion expiro. Conectese de nuevo.");
+                }
+                else if (status == 403){
+                    alert("No esta autorizado a usar el sistema.");
+                }
+                else if (status == 404){
+                    alert("No se encontro la informacion solicitada.");
+                }
+                else {
+                    alert("Error interno del sistema.");
+                }
+            });
+
+        };
 
 
         this.messages();
