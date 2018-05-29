@@ -34,6 +34,9 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
             },
             function (response){
 
+                alert(response.data.Error);
+
+
                 var status = response.status;
                 if (status == 0){
                     alert("No hay conexion a Internet");
@@ -43,9 +46,6 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                 }
                 else if (status == 403){
                     alert("No esta autorizado a usar el sistema.");
-                }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
                 }
                 else {
                     alert("Error interno del sistema.");
@@ -72,6 +72,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     thisCtrl.likesList[mid] = response.data.Likes;
             },
             function (response){
+                alert(response.data.Error);
 
                 var status = response.status;
                 if (status == 0){
@@ -82,9 +83,6 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                 }
                 else if (status == 403){
                     alert("No esta autorizado a usar el sistema.");
-                }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
                 }
                 else {
                     alert("Error interno del sistema.");
@@ -108,6 +106,8 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     thisCtrl.dislikesList[mid] = response.data.Dislikes;
             },
             function (response){
+                alert(response.data.Error);
+
 
                 var status = response.status;
                 if (status == 0){
@@ -119,9 +119,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                 else if (status == 403){
                     alert("No esta autorizado a usar el sistema.");
                 }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
-                }
+
                 else {
                     alert("Error interno del sistema.");
                 }
@@ -168,6 +166,8 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     thisCtrl.loadLikes(mid);
                 }, //Error function
                 function (response) {
+                     alert(response.data.Error);
+
                     // This is the error function
                     // If we get here, some error occurred.
                     // Verify which was the cause and show an alert.
@@ -185,9 +185,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     else if (status == 403) {
                         alert("No esta autorizado a usar el sistema.");
                     }
-                    else if (status == 404) {
-                        alert("No se encontro la informacion solicitada.");
-                    }
+
                     else {
                         alert("Error interno del sistema.");
                     }
@@ -236,6 +234,8 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     // This is the error function
                     // If we get here, some error occurred.
                     // Verify which was the cause and show an alert.
+                    alert(response.data.Error);
+
                     var status = response.status;
                     console.log("Error: " + reqURL);
                     //alert("Cristo");
@@ -250,9 +250,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     else if (status == 403) {
                         alert("No esta autorizado a usar el sistema.");
                     }
-                    else if (status == 404) {
-                        alert("No se encontro la informacion solicitada.");
-                    }
+
                     else {
                         alert("Error interno del sistema.");
                     }
@@ -304,6 +302,8 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     // This is the error function
                     // If we get here, some error occurred.
                     // Verify which was the cause and show an alert.
+                    alert(response.data.Error);
+
                     var status = response.status;
                     console.log("Error: " + reqURL);
                     //alert("Cristo");
@@ -317,9 +317,6 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     }
                     else if (status == 403) {
                         alert("No esta autorizado a usar el sistema.");
-                    }
-                    else if (status == 404) {
-                        alert("No se encontro la informacion solicitada.");
                     }
                     else {
                         alert("Error interno del sistema.");
@@ -346,6 +343,9 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
             },
             function (response){
 
+                alert(response.data.Error);
+
+
                 var status = response.status;
                 if (status == 0){
                     alert("No hay conexion a Internet");
@@ -356,9 +356,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                 else if (status == 403){
                     alert("No esta autorizado a usar el sistema.");
                 }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
-                }
+
                 else {
                     alert("Error interno del sistema.");
                 }
@@ -431,6 +429,8 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     // If we get here, some error occurred.
                     // Verify which was the cause and show an alert.
                     var status = response.status;
+                    alert(response.data.Error);
+
                     console.log("Error: " + reqURL);
                     //alert("Cristo");
                     if (status == 0) {
@@ -444,9 +444,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                     else if (status == 403) {
                         alert("No esta autorizado a usar el sistema.");
                     }
-                    else if (status == 404) {
-                        alert("No se encontro la informacion solicitada.");
-                    }
+
                     else {
                         alert("Error interno del sistema.");
                     }
