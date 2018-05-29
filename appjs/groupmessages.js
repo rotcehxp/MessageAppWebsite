@@ -472,11 +472,8 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
 
                     console.log("response: " + JSON.stringify(response.data));
                     console.log(response.data);
-
                     thisCtrl.peopleWhoLike = response.data.Like_list;
-
                     document.getElementById("peopleWhoLike").style.display = "block";
-
                     document.getElementById("listwholike").innerHTML = "";
 
 
@@ -492,17 +489,13 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
             function (response){
 
                 var status = response.status;
+                alert(response.data.Error);
+
                 if (status == 0){
                     alert("No hay conexion a Internet");
                 }
                 else if (status == 401){
                     alert("Su sesion expiro. Conectese de nuevo.");
-                }
-                else if (status == 403){
-                    alert("No esta autorizado a usar el sistema.");
-                }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
                 }
                 else {
                     alert("Error interno del sistema.");
@@ -540,6 +533,7 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
 
             },
             function (response){
+                alert(response.data.Error);
 
                 var status = response.status;
                 if (status == 0){
@@ -547,12 +541,6 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
                 }
                 else if (status == 401){
                     alert("Su sesion expiro. Conectese de nuevo.");
-                }
-                else if (status == 403){
-                    alert("No esta autorizado a usar el sistema.");
-                }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
                 }
                 else {
                     alert("Error interno del sistema.");

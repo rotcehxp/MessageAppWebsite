@@ -44,17 +44,13 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
                 // If we get here, some error occurred.
                 // Verify which was the cause and show an alert.
                 var status = response.status;
+                alert(response.data.Error);
+
                 if (status == 0){
                     alert("No hay conexion a Internet");
                 }
                 else if (status == 401){
                     alert("Su sesion expiro. Conectese de nuevo.");
-                }
-                else if (status == 403){
-                    alert("No esta autorizado a usar el sistema.");
-                }
-                else if (status == 404){
-                    alert("No se encontro la informacion solicitada.");
                 }
                 else {
                     alert("Error interno del sistema.");
@@ -121,7 +117,8 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
                     // Verify which was the cause and show an alert.
                     var status = response.status;
                     console.log("Error: " + reqURL);
-                    //alert("Cristo");
+                    alert(response.data.Error);
+
                     if (status == 0) {
                         alert("No hay conexion a Internet");
                     }else if (status == 400) {
@@ -130,12 +127,7 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
                     else if (status == 401) {
                         alert("Su sesion expiro. Conectese de nuevo.");
                     }
-                    else if (status == 403) {
-                        alert("No esta autorizado a usar el sistema.");
-                    }
-                    else if (status == 404) {
-                        alert("No se encontro la informacion solicitada.");
-                    }
+
                     else {
                         alert("Error interno del sistema.");
                     }

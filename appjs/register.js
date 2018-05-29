@@ -66,6 +66,8 @@ angular.module('MessageApp').controller('RegisterController', ['$http', '$log', 
                     // Verify which was the cause and show an alert.
                     var status = response.status;
                     console.log("Error: " + reqURL);
+                    alert(response.data.Error);
+
                     //alert("Cristo");
                     if (status == 0) {
                         alert("No hay conexion a Internet");
@@ -74,12 +76,6 @@ angular.module('MessageApp').controller('RegisterController', ['$http', '$log', 
                     }
                     else if (status == 401) {
                         alert("Su sesion expiro. Conectese de nuevo.");
-                    }
-                    else if (status == 403) {
-                        alert("No esta autorizado a usar el sistema.");
-                    }
-                    else if (status == 404) {
-                        alert("No se encontro la informacion solicitada.");
                     }
                     else {
                         alert("Error interno del sistema.");

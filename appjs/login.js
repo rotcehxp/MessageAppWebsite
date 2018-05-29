@@ -54,9 +54,10 @@ angular.module('MessageApp').controller('LoginController', ['$http', '$log', '$s
                     // This is the error function
                     // If we get here, some error occurred.
                     // Verify which was the cause and show an alert.
+                    console.log(response);
                     var status = response.status;
                     console.log("Error: " + reqURL);
-                    //alert("Cristo");
+                    alert(response.data.Error);
                     if (status == 0) {
                         alert("No hay conexion a Internet");
                     }
@@ -65,9 +66,6 @@ angular.module('MessageApp').controller('LoginController', ['$http', '$log', '$s
                     }
                     else if (status == 403) {
                         alert("No esta autorizado a usar el sistema.");
-                    }
-                    else if (status == 404) {
-                        alert("Email o password incorrecto.");
                     }
                     else {
                         alert("Error interno del sistema.");
