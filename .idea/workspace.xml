@@ -4,7 +4,8 @@
     <list default="true" id="d82969c3-d29a-46f0-b3e2-056c0c33a4fa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appjs/groupmessages.js" beforeDir="false" afterPath="$PROJECT_DIR$/appjs/groupmessages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/groupmessages.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/groupmessages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appjs/mygroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/appjs/mygroups.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +19,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
+            <state relative-caret-position="360">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -33,11 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mygroups.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/appjs/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="59" column="35" lean-forward="true" selection-start-line="59" selection-end-line="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mygroups.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appjs/mygroups.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="128" column="21" lean-forward="true" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
+            <state relative-caret-position="135">
+              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -45,17 +55,17 @@
       <file leaf-file-name="register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appjs/register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-49">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="1305">
+              <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="groupmessages.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="groupmessages.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/appjs/groupmessages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="479" column="52" selection-start-line="479" selection-start-column="52" selection-end-line="479" selection-end-column="52" />
+            <state relative-caret-position="160">
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -135,15 +145,15 @@
         <option value="$PROJECT_DIR$/pages/login.html" />
         <option value="$PROJECT_DIR$/pages/register.html" />
         <option value="$PROJECT_DIR$/appjs/group.js" />
-        <option value="$PROJECT_DIR$/appjs/login.js" />
         <option value="$PROJECT_DIR$/css/tablemain.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/appjs/main.js" />
-        <option value="$PROJECT_DIR$/appjs/register.js" />
-        <option value="$PROJECT_DIR$/appjs/mygroups.js" />
         <option value="$PROJECT_DIR$/pages/mygroups.html" />
         <option value="$PROJECT_DIR$/pages/groupmessages.html" />
+        <option value="$PROJECT_DIR$/appjs/login.js" />
+        <option value="$PROJECT_DIR$/appjs/register.js" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/appjs/groupmessages.js" />
+        <option value="$PROJECT_DIR$/appjs/mygroups.js" />
       </list>
     </option>
   </component>
@@ -246,7 +256,21 @@
       <option name="project" value="LOCAL" />
       <updated>1527550404315</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Now it shows the list of people who liked or disliked a message.">
+      <created>1527556051711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1527556051711</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Now it shows the list of people who liked or disliked a message.">
+      <created>1527556557594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1527556557594</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -303,7 +327,8 @@
     <MESSAGE value="Message page have been added." />
     <MESSAGE value="All main features are functioning, except the POST methods." />
     <MESSAGE value="All main features are functioning, including the POST methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="All main features are functioning, including the POST methods." />
+    <MESSAGE value="Now it shows the list of people who liked or disliked a message." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now it shows the list of people who liked or disliked a message." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
@@ -537,41 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/appjs/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="74" lean-forward="true" selection-start-line="46" selection-start-column="74" selection-end-line="46" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appjs/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appjs/mygroups.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="128" column="21" lean-forward="true" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appjs/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/mygroups.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -629,10 +619,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/appjs/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1305">
+          <caret line="87" column="12" selection-start-line="87" selection-start-column="12" selection-end-line="87" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appjs/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="59" column="35" lean-forward="true" selection-start-line="59" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appjs/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="46" lean-forward="true" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/appjs/groupmessages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="479" column="52" selection-start-line="479" selection-start-column="52" selection-end-line="479" selection-end-column="52" />
+        <state relative-caret-position="160">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appjs/mygroups.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
         </state>
       </provider>
     </entry>

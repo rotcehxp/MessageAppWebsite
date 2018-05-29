@@ -9,6 +9,10 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
         this.newText = "";
         this.gid = $routeParams.gid;
 
+        if(localStorage.getItem("currentLoggedUser")==null){
+            $location.url('/login');
+        }
+
 
         this.username = localStorage.getItem("currentLoggedUserUsername");
 

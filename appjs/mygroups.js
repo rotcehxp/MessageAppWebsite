@@ -7,6 +7,10 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
         this.counter = 2;
         this.newText = "";
 
+        if(localStorage.getItem("currentLoggedUser")==null){
+            $location.url('/login');
+        }
+
         this.username = localStorage.getItem("currentLoggedUserUsername");
 
 
