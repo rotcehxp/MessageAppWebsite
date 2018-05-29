@@ -553,6 +553,14 @@ angular.module('MessageApp').controller('GroupMessagesController', ['$http', '$l
 
         };
 
+         thisCtrl.logout = function() {
+            localStorage.setItem("currentLoggedUser", null);
+            localStorage.setItem("currentLoggedUserId", null);
+            localStorage.setItem("currentLoggedUserUsername", null);
+
+            $location.url('/login');
+        };
+
 
         this.messages();
 

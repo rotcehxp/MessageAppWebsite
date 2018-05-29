@@ -7,9 +7,16 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
         this.counter = 2;
         this.newText = "";
 
-        if(localStorage.getItem("currentLoggedUser")==null){
-            $location.url('/login');
-        }
+
+
+        this.loginVerification = function(){
+            if(localStorage.getItem("currentLoggedUser")==null){
+                $location.url('/login');
+            }
+        };
+
+        this.loginVerification();
+
 
         this.username = localStorage.getItem("currentLoggedUserUsername");
 
@@ -150,6 +157,14 @@ angular.module('MessageApp').controller('MyGroupsController', ['$http', '$log', 
                 return "owner";
             }
             return "member";
+        };
+
+        thisCtrl.logout = function() {
+            localStorage.setItem("currentLoggedUser", null);
+            localStorage.setItem("currentLoggedUserId", null);
+            localStorage.setItem("currentLoggedUserUsername", null);
+
+            $location.url('/login');
         };
 
         this.groups();
